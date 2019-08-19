@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+        /* page-nav__list-item--no_hover
+  --------------------------------------------- */
+        .page-nav__list-item--no_hover {
+            display: table-cell;
+            box-sizing: border-box;
+            padding: 10px 0;
+            border-right: 10px solid #fff;
+            border-left: 10px solid #fff;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 1.25rem;
+            line-height: 1.2;
+            -webkit-transition: color .3s, background-color .3s;
+            -o-transition: color .3s, background-color .3s;
+            transition: color .3s, background-color .3s;
+        }
+
+        .page-nav__list-item--no_hover:hover {
+            cursor: default;
+        }
+
+        .page-nav__list-item--no_hover--current {
+            background-color: #39c8ec;
+            color: #fff;
+        }
+
+        @media screen and (max-width: 979px) {
+            .page-nav__list-item--no_hover {
+                display: table-cell;
+                padding: 1.33333vw;
+                width: 33.333%;
+                border-right: 3px solid #fff;
+                border-left: 0;
+                background-color: #f2f5f6;
+                vertical-align: middle;
+                font-size: 0.875rem;
+            }
+
+            .page-nav__list-item--no_hover:last-child {
+                border-right: 0;
+            }
+
+            .page-nav__list-item--no_hover--current {
+                background-color: #39c8ec;
+                color: #fff;
+            }
+        }
+
+        /*-----------------*/
+        .wrapper {
+            position: relative;
+            z-index: 1;
+            padding-top: 40px;
+            padding-bottom: 150px;
+            background-color: #EFF9EB;
+        }
+
+        @media screen and (max-width: 979px) {
+            .wrapper {
+                padding-top: 0;
+                padding-bottom: 10.66667vw;
+            }
+
+            .wrapper--nopdb-sp {
+                padding-bottom: 0;
+            }
+        }
+
+        /* ---------------------------------------------
+    *   main
+    --------------------------------------------- */
+        .main {
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: 10px;
+            padding-left: 10px;
+            width: 980px;
+        }
+
+        .main:after {
+            display: block;
+            clear: both;
+            content: "";
+        }
+
+        .page-title {
+            padding: 20px 0 54px;
+            border-bottom: 1px solid #d6dedc;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.875rem;
+            line-height: 1.0;
+        }
+
+        /*  */
+        .forms__nantoka {
+            /* text-align: center; */
+        }
+
+        /* .login_parent {
+      position: relative;
+      background-color: #CCCCCC;
+    }
+
+    .forms__login {
+      width: 300px;
+      border: 3px solid #000000;
+      display: table-cell;
+      position: absolute;
+      padding: 20px;
+      margin: auto;
+      height: 200px;
+    } */
+        .centering_parent_parent {
+            margin: 0 auto;
+        }
+
+        .centering_parent {
+            text-align: center;
+        }
+
+        .centering_item {
+            background-color: #2196F3;
+            /* 背景色指定 */
+            display: inline-block;
+            height: 200px;
+            width: 200px;
+        }
+
+        .centering_item {
+            background-color: #ffffff;
+            /* 背景色指定 */
+            display: inline-block;
+            height: 200px;
+            width: 200px;
+            border-radius: 10px;
+            filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.5));
+        }
+
+        .centering_child {
+            background-color: #01C2BF;
+            height: 50px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .Login {
+            vertical-align: bottom;
+            margin: 0 auto;
+        }
+
+        .centering_item input {
+            border: none;
+            height: 40px;
+            width: 80%;
+            margin: 0 10px;
+            font-size: 1.6rem;
+            /* border-radius: 16px; */
+
+        }
+
+        /*  */
+
+        @media screen and (max-width: 979px) {
+            .main {
+                padding-right: 5.33333vw;
+                padding-left: 5.33333vw;
+                width: auto;
+            }
+        }
+
+        @media screen and (max-width: 979px) {
+            .main {
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+
+        /*-----------------*/
+        /*  */
+        .wrap1 {
+            text-align: center;
+        }
+
+        /* .cls1 {
+            background-color: #CCCCCC;
+            height: 500px;
+            width: 500px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .cls2 {
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            display: inline-block;
+            height: 400px;
+            width: 40%;
+            vertical-align: middle;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            transform: translateY(-50%) translateX(-50%);
+        } */
+
+        .cls1 {
+            background-color: #CCCCCC;
+            height: 500px;
+            width: 500px;
+            /* 直下の要素が並列 */
+            display: flex;
+            /* 積み重なるように配置する */
+            flex-direction: column;
+            /* アイテムを中央に寄せる */
+            justify-content: center;
+            /* margin、両端設定 */
+            margin: 0 auto;
+            align-items: flex-end;
+        }
+
+        .cls2 {
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            /* display: inline-block; */
+            height: 80%;
+            width: 80%;
+            /* 直下の要素が並列 */
+            display: flex;
+            /* 積み重なるように配置する */
+            flex-direction: column;
+            /* アイテムを中央に寄せる */
+            justify-content: center;
+            /* margin、両端設定 */
+            margin: 0 auto;
+        }
+
+        .cls3 {
+            background-color: #CCCCCC;
+            height: 80%;
+            width: 80%;
+            /* 直下の要素が並列 */
+            display: flex;
+            /* 積み重なるように配置する */
+            flex-direction: column;
+            /* アイテムを中央に寄せる */
+            justify-content: center;
+            /* margin、両端設定 */
+            margin: 0 auto;
+        }
+
+        /*  */
+    </style>
+    <script type="text/javascript">
+    </script>
+</head>
+
+<body>
+    <div class="wrap1">
+        <div class="cls1">
+            <div class="cls2">
+                <div class="cls3">
+                    <p class="p1">*</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
