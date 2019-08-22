@@ -17,7 +17,7 @@
           <div @click="ToggleColor(key)">{{ rm.reps }}</div>
         </td>
       </tr>
-    </table> -->
+    </table>-->
     <pre style="text-align: left;">{{ $data }}</pre>
   </div>
 </template>
@@ -107,6 +107,6 @@ td div {
 }
 
 .gray {
-  background-color: #CCCCCC;
+  background-color: #cccccc;
 }
 </style>

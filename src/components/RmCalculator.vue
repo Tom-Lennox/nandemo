@@ -2,9 +2,13 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <hr />
-    <input v-model.number="weight">
-    <input v-model.number="reps">
-    {{ max }}
+    <p>
+      <input type="number" v-model.number="weight" />
+    </p>
+    <p>
+      <input type="number" v-model.number="reps" />
+    </p>
+    <p>{{ max }}</p>
     <pre style="text-align: left;">{{ $data }}</pre>
   </div>
 </template>
@@ -19,13 +23,17 @@ export default {
   data() {
     return {
       weight: 0,
-      reps: 0,
-      max: 0
+      reps: 0
+      // max: 0
     };
   },
   computed: {
     max: function() {
-      return this.weight
+      if (this.reps === 0) return 0;
+      if (this.reps === 1) return this.weight * this.reps;
+
+      let v = this.weight * (1 + this.reps / 40);
+      return Math.round(v * 100) / 100;
     }
   }
 };
@@ -33,29 +41,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-
-td div {
-  height: 20px;
-  width: 20px;
-  border: 1px solid #000000;
-}
-
-.gray {
-  background-color: #CCCCCC;
+input {
+  height: 2rem;
+  width: 10rem;
+  font-size: 1.2rem;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
 }
 </style>
